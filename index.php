@@ -1,8 +1,7 @@
 <?php
     include 'resources/Functions/db_connection.php';
-
-
-
+    include 'resources/functions/function.php';
+    $allChars = selectAll("characters");
     // $data = $pdo->query( "SELECT `id`,`name`,`attack`,`avatar`,`health`,`defense` FROM `characters` ORDER BY `characters`.`name` ASC" );
 ?>
 
@@ -15,14 +14,13 @@
     <link href="resources/css/style.css" rel="stylesheet"/>
 </head>
 <body>
-<header><h1>Alle <?php echo $aantal ?> characters uit de database</h1>
+<header><h1>Alle <?php echo Amount("id", "aantal", "characters"); ?> characters uit de database</h1>
 
 </header>
 <div id="container">
 <?php 
-while($CharData = $data->fetch())
-{
-    
+foreach ($allChars as $CharData) {
+
     ?>
     <a class="item" href="character.php?id=<?php echo $CharData['id'] ?>">
         <div class="left">

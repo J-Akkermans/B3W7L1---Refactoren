@@ -1,9 +1,7 @@
 <?php 
     include 'resources/Functions/db_connection.php';    
-    // $id = $_GET['id'];
-    // $data = $pdo->query( "SELECT * FROM `characters` WHERE id='$id'" );
-    // $CharData = $data-> fetch();
-    
+    include 'resources/functions/function.php';
+    $CharData = selectIndivual("characters", $_GET['id']);
     
 ?>
 
